@@ -1518,7 +1518,7 @@ void StorageKafka2::pollConsumerEvents(size_t idx)
             consumer = consumers[idx];
         }
 
-        /// Non-owning: acquiring a held consumer would block for kafka_consumer_acquire_timeout_ms.
+        /// Non-owning: acquiring a held consumer would block for `kafka_consumer_acquire_timeout_ms`.
         consumer->pollEventsNonOwning();
     }
     catch (...)
